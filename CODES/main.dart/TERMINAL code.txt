@@ -1,0 +1,246 @@
+1.
+Step 1 — Make your Flutter project
+
+Open VS Code.
+
+Go to:
+
+Terminal → New Terminal
+
+At the bottom of VS Code, type:
+
+flutter create cartesian_quest
+
+Wait for it to finish.
+
+Then:
+
+cd cartesian_quest
+
+Now run:
+
+flutter run -d chrome
+
+Chrome should open with the default Flutter app.
+
+If that works:
+
+🎉 Your development environment is ready.
+
+Step 2 — Open the project
+
+In VS Code, you should see something like:
+
+cartesian_quest
+│
+├── android
+├── ios
+├── lib
+├── test
+├── web
+├── pubspec.yaml
+└── ...
+
+For now, we're mainly interested in:
+
+lib
+ └── main.dart
+
+Open main.dart.
+
+You'll see some default Flutter code.
+
+Step 3 — Replace the starter code
+
+For our first version, we're going to keep things extremely simple.
+
+Delete everything inside main.dart.
+
+Put this in:
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const CartesianQuestApp());
+}
+
+class CartesianQuestApp extends StatelessWidget {
+  const CartesianQuestApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Cartesian Quest',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Cartesian Quest'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Cartesian Quest',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'Grade 8 Mathematics',
+              style: TextStyle(fontSize: 18),
+            ),
+
+            const SizedBox(height: 30),
+
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Start Quiz'),
+            ),
+
+            const SizedBox(height: 10),
+
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Flashcards'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+Save the file:
+
+Ctrl + S on Windows
+Cmd + S on Mac
+
+Your Chrome app should automatically update.
+
+You should now see:
+
+Cartesian Quest
+Grade 8 Mathematics
+
+[Start Quiz]
+[Flashcards]
+
+Step 4 — Now we're going to add YOUR questions
+
+This is where your worksheet becomes the actual app.
+
+We'll store the questions as data.
+
+For example, your first question becomes:
+
+final questions = [
+  {
+    'question':
+        'What is the point where the x-axis and y-axis intersect called?',
+    'choices': [
+      'Quadrant',
+      'Origin',
+      'Coordinate',
+      'Intercept',
+    ],
+    'answer': 'Origin',
+  },
+];
+
+Then we can add question 2:
+
+{
+  'question': 'Which coordinate represents the origin?',
+  'choices': [
+    '(1, 1)',
+    '(0, 1)',
+    '(1, 0)',
+    '(0, 0)',
+  ],
+  'answer': '(0, 0)',
+},
+
+And so on.
+
+2.
+1. Open the Terminal in VS Code
+
+At the top menu:
+
+Terminal → New Terminal
+
+You should see a terminal at the bottom.
+
+2. Create your project
+
+Type this exactly:
+
+flutter create cartesian_quest
+
+Then press Enter.
+
+Wait until it says something like:
+
+All done!
+3. Open the project in VS Code
+
+In the same terminal, type:
+
+cd cartesian_quest
+
+Then:
+
+code .
+
+Press Enter.
+
+This should open the cartesian_quest folder as a project in VS Code.
+
+4. Look at the left side
+
+Click the Explorer icon on the far left. It looks like two pieces of paper/files.
+
+You should now see:
+
+CARTESIAN_QUEST
+
+  android
+  ios
+  lib
+  test
+  web
+  .gitignore
+  pubspec.yaml
+  README.md
+
+Then click:
+
+lib → main.dart
+
+That's the file we'll edit.
+
+If code . doesn't work
+
+That's okay. Tell me exactly what appears in the terminal after you type:
+
+flutter create cartesian_quest
+
+You can copy/paste the message here, and I'll guide you from there.
